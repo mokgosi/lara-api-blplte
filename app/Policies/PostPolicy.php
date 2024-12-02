@@ -13,7 +13,7 @@ class PostPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class PostPolicy
      */
     public function view(User $user, Post $post): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class PostPolicy
      */
     public function update(User $user, Post $post): bool
     {
-        return false;
+        return $user->id === $post->user_id;
     }
 
     /**
@@ -45,7 +45,7 @@ class PostPolicy
      */
     public function delete(User $user, Post $post): bool
     {
-        return false;
+        return $user->id === $post->user_id;
     }
 
     /**
@@ -62,5 +62,12 @@ class PostPolicy
     public function forceDelete(User $user, Post $post): bool
     {
         return false;
+    }
+
+    public function modify(User $user, Post $post) : Response
+    {
+        return $user->id === $post->user_id 
+            ? Response::allow() 
+            : Response::deny('Operation not allowed.');
     }
 }

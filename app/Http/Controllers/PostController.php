@@ -12,6 +12,8 @@ use App\Http\Resources\PostResource;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
+
 
 class PostController extends Controller implements HasMiddleware
 {
@@ -38,18 +40,15 @@ class PostController extends Controller implements HasMiddleware
      */
     public function store(StorePostRequest $request)
     {
-        $details =[
-            'name' => $request->name,
-            'details' => $request->details
-        ];
+        $validated = $request->validated();
 
         DB::beginTransaction();
 
         try{
-             $post = $this->postRepositoryInterface->store($details);
+             $post = $this->postRepositoryInterface->store($validated);
 
              DB::commit();
-             return ApiResponseClass::sendResponse(new PostResource($post),'Post created Successful',201);
+             return ApiResponseClass::sendResponse(new PostResource($post),'Post created Successful.',201);
 
         } catch(\Exception $e) {
             return ApiResponseClass::rollback($e);
@@ -72,13 +71,15 @@ class PostController extends Controller implements HasMiddleware
      */
     public function update(UpdatePostRequest $request, $id)
     {
-        $updateDetails =[
-            'name' => $request->name,
-            'details' => $request->details
-        ];
+        $post = Post::find($id);
+        // Gate::authorize('modify', $post->id);
+
+        $validated = $request->validated();
+
         DB::beginTransaction();
+
         try{
-             $post = $this->postRepositoryInterface->update($updateDetails,$id);
+             $post = $this->postRepositoryInterface->update($validated ,$id);
 
              DB::commit();
              return ApiResponseClass::sendResponse('Post Updated Successfully','',201);
