@@ -6,13 +6,21 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 
-use App\Interface\PostRepositoryInterface;
+use App\Interfaces\PostRepositoryInterface;
 use App\Classes\ApiResponseClass;
 use App\Http\Resources\PostResource;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\DB;
 
-class PostController extends Controller
+class PostController extends Controller implements HasMiddleware
 {
+    public static function middleware() 
+    {
+        return [
+            new Middleware('auth:sactum', except:['index', 'show'])
+        ];
+    }
 
     private PostRepositoryInterface $postRepositoryInterface;
 
@@ -53,7 +61,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = $this->postRepositoryInterface->getById($id);
+        $post = $this->postRepositoryInterface->show($id);
 
         return ApiResponseClass::sendResponse(new PostResource($post),'',200);
 

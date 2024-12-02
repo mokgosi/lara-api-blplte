@@ -15,9 +15,12 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
       parent::__construct($post);
    }
 
+   /**
+     * Example implementation of functionality specific to Post.
+     */
    public function checkPostDate($id, $date)
    {
-      // fucntionality goes here
+      // fucntionality goes here 
       // e.g Post::checkPostDate($id, $date)
    }
 
