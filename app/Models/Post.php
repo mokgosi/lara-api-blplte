@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Sanctum\HasApiTokens;
 
 class Post extends Model
@@ -13,7 +14,8 @@ class Post extends Model
 
     protected $fillable = ['title', 'body', 'user_id', 'slug'];
 
-    public function __construct() 
+    public function comments(): HasMany
     {
+        return $this->hasMany(Comment::class);
     }
 }

@@ -88,10 +88,10 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        $this->postRepositoryInterface->delete($id);
+        $this->postRepositoryInterface->delete($post->id);
 
-        return ApiResponseClass::sendResponse('Post Deleted Successfully','',204);
+        return ApiResponseClass::sendResponse('Post Deleted Successfully','', 204);
     }
 }
