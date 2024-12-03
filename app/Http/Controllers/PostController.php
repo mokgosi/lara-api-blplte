@@ -2,29 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
-use App\Models\Post;
+use App\Http\Resources\PostResource;
 
 use App\Interfaces\PostRepositoryInterface;
 use App\Classes\ApiResponseClass;
-use App\Http\Resources\PostResource;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 
-
-class PostController extends Controller implements HasMiddleware
+class PostController extends Controller
 {
-    public static function middleware() 
-    {
-        return [
-            new Middleware('auth:sactum', except:['index', 'show'])
-        ];
-    }
-
     private PostRepositoryInterface $postRepositoryInterface;
+
+    public function __construct(PostRepositoryInterface $postRepositoryInterface) 
+    {
+        $this->postRepositoryInterface = $postRepositoryInterface;
+    }
 
     /**
      * Display a listing of the resource.
@@ -48,6 +44,7 @@ class PostController extends Controller implements HasMiddleware
              $post = $this->postRepositoryInterface->store($validated);
 
              DB::commit();
+             
              return ApiResponseClass::sendResponse(new PostResource($post),'Post created Successful.',201);
 
         } catch(\Exception $e) {
@@ -58,9 +55,9 @@ class PostController extends Controller implements HasMiddleware
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = $this->postRepositoryInterface->show($id);
+        $post = $this->postRepositoryInterface->show($post->id);
 
         return ApiResponseClass::sendResponse(new PostResource($post),'',200);
 
@@ -69,17 +66,16 @@ class PostController extends Controller implements HasMiddleware
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, $id)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        $post = Post::find($id);
-        // Gate::authorize('modify', $post->id);
+        // Gate::authorize('update', $post->id);
 
         $validated = $request->validated();
 
         DB::beginTransaction();
 
         try{
-             $post = $this->postRepositoryInterface->update($validated ,$id);
+             $post = $this->postRepositoryInterface->update($validated , $post->id);
 
              DB::commit();
              return ApiResponseClass::sendResponse('Post Updated Successfully','',201);
