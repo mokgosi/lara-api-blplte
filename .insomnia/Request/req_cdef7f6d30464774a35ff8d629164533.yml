@@ -1,0 +1,30 @@
+_id: req_cdef7f6d30464774a35ff8d629164533
+type: Request
+parentId: wrk_5db7387396dd43e6bc8f396a33fdd796
+modified: 1733304032685
+created: 1733210731061
+url: http://127.0.0.1:8000/api/post
+name: Posts - Get ALL
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+    id: pair_fee0264f37c244b4901abdb59223962b
+  - id: pair_c140b001326a44cdac6bd81acc63ed16
+    name: Accept
+    value: application/json
+    description: ""
+authentication:
+  type: bearer
+  token: 3|gyu2GcBRVdtaQocyf5XCGLRQxEsm6Biig0ex03uV4c6efa6d
+metaSortKey: -1694680268394.375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

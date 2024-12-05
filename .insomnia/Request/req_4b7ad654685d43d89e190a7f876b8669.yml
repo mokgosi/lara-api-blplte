@@ -1,0 +1,40 @@
+_id: req_4b7ad654685d43d89e190a7f876b8669
+type: Request
+parentId: wrk_5db7387396dd43e6bc8f396a33fdd796
+modified: 1733401871801
+created: 1733397095011
+url: http://127.0.0.1:8000/api/comment
+name: Comments - Create
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"comment": "Lorem ipsun dolor set amet",
+    	"post_id": "2",
+    	"user_id": "3"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_1b277cafcc634116b1d61e21572669a8
+  - name: User-Agent
+    value: insomnia/2023.5.8
+    id: pair_53efc2c4243b40398a23eb37f99876e5
+  - id: pair_eda4d0f069d44e509bb9b5c762865bc9
+    name: Accept
+    value: application/json
+    description: ""
+authentication:
+  type: bearer
+  token: 5|Kl4YIYwrsXNlKw9N3swqXFPp5XjLRNICq8pNUAzJe936a76a
+metaSortKey: -1733397095011
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,30 @@
+_id: req_58ceb63f20d845a8b05848ce182a6879
+type: Request
+parentId: wrk_5db7387396dd43e6bc8f396a33fdd796
+modified: 1733424807187
+created: 1733261115978
+url: http://127.0.0.1:8000/api/comment
+name: Comments - Get ALL
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+    id: pair_39d8ba5305e8431783b4f533946537c6
+  - id: pair_ece424fc3fef4da1bcc67b7cc66af976
+    name: Accept
+    value: application/json
+    description: ""
+authentication:
+  type: bearer
+  token: 3|sBDfwe2dZJWAR8m4G0Es644gy0cFiFWmcwMdhBPKfabfc3db
+metaSortKey: -1733261115979
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,30 @@
+_id: req_657dad28aadd47b1b8da0a81e011ce8a
+type: Request
+parentId: wrk_5db7387396dd43e6bc8f396a33fdd796
+modified: 1733426575812
+created: 1728502750918
+url: http://127.0.0.1:8000/api/user
+name: "Users - Get ALL "
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+    id: pair_ce6179b2b16445c6a2b2cb00a9a39574
+  - id: pair_b9f54096c93e41fa837cf3942ac6e383
+    name: Accept
+    value: application/json
+    description: ""
+authentication:
+  type: bearer
+  token: 4|b42zU3YZ1rbN25Q8V4uJUbzqNt9gX4juF3uXwhuS2f53f420
+metaSortKey: -1710416644397
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

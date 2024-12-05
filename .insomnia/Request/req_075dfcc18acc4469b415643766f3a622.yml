@@ -1,0 +1,37 @@
+_id: req_075dfcc18acc4469b415643766f3a622
+type: Request
+parentId: wrk_5db7387396dd43e6bc8f396a33fdd796
+modified: 1733426491874
+created: 1733214496676
+url: http://127.0.0.1:8000/api/post
+name: Posts - Create
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"title": "Heading 3",
+    	"slug": "heading-3",
+    	"body": "Heading 3 content",
+    	"user_id": 2
+    }
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    id: pair_5a566880f3f845cd80edeb9f71985dcb
+  - name: User-Agent
+    value: insomnia/2023.5.8
+    id: pair_7ca3193520fd4ad0aa25c16da1329746
+authentication:
+  type: bearer
+  token: 1|syPsLy9THzTAubUzzYJkUNtjSkHGTZBR8c6tF5hv9f4d76c1
+metaSortKey: -1694680305292.9688
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
