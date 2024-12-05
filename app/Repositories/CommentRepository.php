@@ -15,5 +15,5 @@ class CommentRepository extends BaseRepository implements CommentRepositoryInter
         parent::__construct($comment);
     }
 
-    // implement here comment model spefic functionality
+    // implement Comment specific functionality
 }
