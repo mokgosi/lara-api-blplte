@@ -1,0 +1,37 @@
+_id: req_5bebdfdfb97f43dea0bcfb6474529a6f
+type: Request
+parentId: wrk_5db7387396dd43e6bc8f396a33fdd796
+modified: 1733429173114
+created: 1728502750944
+url: http://127.0.0.1:8000/api/login
+name: Sign In
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email": "user2@mail.com",
+    	"password": "password123"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Accept
+    value: application/json
+    id: pair_029da9e5028d430a8576b01269b22a1e
+  - name: User-Agent
+    value: insomnia/2023.5.8
+    id: pair_8724cea0415a429486b65b18bb236ddf
+authentication:
+  type: bearer
+  disabled: true
+metaSortKey: -1726826644276
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

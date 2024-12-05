@@ -1,0 +1,53 @@
+_id: req_cb5b0c3a291c4c20a4ae722ebc32b605
+type: Request
+parentId: wrk_5db7387396dd43e6bc8f396a33fdd796
+modified: 1733299337822
+created: 1728502750915
+url: http://127.0.0.1:8000/api/register
+name: Sign Up
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email": "user2@mail.com",
+    	"name": "User2 User2",
+    	"password": "password123",
+    	"password_confirmation": "password123"
+    }
+parameters:
+  - id: pair_043e682784d44028ba5ac9d2248e8748
+    name: username
+    value: user1
+    description: ""
+  - id: pair_90572cbcbf4c4680b193eca176a06a2e
+    name: email
+    value: user1@mail.com
+    description: ""
+  - id: pair_173fe7462a2f48d08fed0f6274531fa0
+    name: password
+    value: password
+    description: ""
+  - id: pair_527d66bd031645a4a0856ef5a92cecdd
+    name: last_name
+    value: user1
+    description: ""
+  - id: pair_b94442dd1ebe4e3bacba310de0b796e4
+    name: first_name
+    value: user1
+    description: ""
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1726152504472
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

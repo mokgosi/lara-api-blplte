@@ -1,0 +1,45 @@
+_id: req_0319918ca1bb4a9fbf60841ecdaff944
+type: Request
+parentId: wrk_5db7387396dd43e6bc8f396a33fdd796
+modified: 1733404620946
+created: 1733401978874
+url: http://127.0.0.1:8000/api/post/1
+name: Posts - Update
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"title": "Heading 3",
+    	"slug": "heading-3",
+    	"body": "Heading 3333 content",
+    	"user_id": 2
+    }
+parameters:
+  - id: pair_324f9bf48f944b9e8b54f3234e6ac074
+    name: ""
+    value: ""
+    description: ""
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_171498adbe934bb3992098f99c04a93a
+  - name: User-Agent
+    value: insomnia/2023.5.8
+    id: pair_b47f9b122dbb4e5abfb0b0e8405321d3
+  - id: pair_76124ede8f354533b73fb00c84a68f9e
+    name: Accept
+    value: application/json
+    description: ""
+authentication:
+  type: bearer
+  token: 5|Kl4YIYwrsXNlKw9N3swqXFPp5XjLRNICq8pNUAzJe936a76a
+metaSortKey: -1694680299143.2031
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
