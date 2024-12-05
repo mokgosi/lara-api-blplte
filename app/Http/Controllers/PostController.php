@@ -94,4 +94,10 @@ class PostController extends Controller
 
         return ApiResponseClass::sendResponse('Post Deleted Successfully','', 204);
     }
+
+    public function getPostWithComments($id)
+    {
+        $data = $this->postRepositoryInterface->getPostWithComments($id);
+        return ApiResponseClass::sendResponse(PostResource::collection($data),'',200);
+    }
 }

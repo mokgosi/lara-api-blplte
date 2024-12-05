@@ -13,6 +13,7 @@ Route::get('/user', function (Request $request) {
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::apiResource('post', PostController::class);
     Route::apiResource('comment', CommentController::class);
+    Route::get('post-with-comments/{id}', [PostController::class, 'getPostWithComments'])->name('post-with-comments');
 });
 
 Route::post('/register', [AuthController::class, 'register']);

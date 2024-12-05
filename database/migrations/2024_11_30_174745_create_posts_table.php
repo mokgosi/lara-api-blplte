@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title', length: 255);
-            $table->string('slug', length: 300);
+            $table->string('slug', length: 300)->unique();
             $table->text('body');
+            $table->boolean('is_published')->default(false);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

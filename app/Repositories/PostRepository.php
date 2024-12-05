@@ -7,12 +7,15 @@ use App\Repositories\BaseRepository;
 
 class PostRepository extends BaseRepository implements PostRepositoryInterface
 {
+   protected $model;
     /**
      * Create a new class instance.
      */
    public function __construct(Post $post)
    {
       parent::__construct($post);
+
+      $this->model = $post;
    }
 
    /**
@@ -24,4 +27,13 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
       // e.g Post::checkPostDate($id, $date)
    }
 
+   public function getPostWithComments($id)
+   {
+      $feeds = $this->model::with('user','comments')
+               ->withCount('comments')
+               ->where('id', $id)
+               ->get();
+
+      return $feeds;
+   }
 }

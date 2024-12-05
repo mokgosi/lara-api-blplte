@@ -10,4 +10,5 @@ interface PostRepositoryInterface extends BaseInterface
      */
 
     public function checkPostDate($id, $date);
+    public function getPostWithComments($id);
 }

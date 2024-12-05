@@ -12,7 +12,12 @@ class Post extends Model
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory, HasApiTokens;
 
-    protected $fillable = ['title', 'body', 'user_id', 'slug'];
+    protected $fillable = ['title', 'body', 'user_id', 'slug', 'is_published'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function comments(): HasMany
     {
