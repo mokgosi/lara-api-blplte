@@ -72,8 +72,8 @@ class CommentController extends Controller
             $comment = $this->commentRepositoryInterface->update($validated, $comment->id);
 
             DB::commit();
-
-            return ApiResponseClass::sendResponse(new CommentResource($comment),'Comment updated Successful.',201);
+            
+            return ApiResponseClass::sendResponse('Post Updated Successfully','',201);
 
         } catch (\Exception $e) {
             return ApiResponseClass::rollback($e);
