@@ -20,14 +20,6 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PostSeeder::class,
             CommentSeeder::class,
-            LikeSeeder::class
         ]);
-        
-        // User::factory(5)->create();
-        
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
