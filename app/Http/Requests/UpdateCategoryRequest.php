@@ -3,10 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Contracts\Validation\Validator;
 
-class UpdatePostRequest extends FormRequest
+class UpdateCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +22,8 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|unique:posts|max:512',
-            'slug' => 'required|unique:posts|max:512',
-            'body' => 'required',
-            'user_id' => 'required|integer'
+            'title' => 'required|unique:posts|max:255',
+            'slug' => 'required|unique:posts|max:300',
         ];
     }
 }

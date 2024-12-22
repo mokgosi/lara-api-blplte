@@ -18,12 +18,17 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-        $title = fake()->words(3, true);
+        $title = fake()->realText(50);
+        
         return [
             'title' => $title,
             'slug' => Str::slug($title, '-'),
-            'is_published' => true,
-            'body' => fake()->paragraphs(3, true),
+            'thumbnail_url' => fake()->imageUrl,
+            'meta_title' => fake()->realText(255),
+            'meta_description' => fake()->realText(255),
+            'body' => fake()->realText(5000),
+            'is_published' => fake()->boolean,
+            'published_at' => fake()->dateTime,
             'user_id' => User::inRandomOrder()->first()->id,
         ];
     }

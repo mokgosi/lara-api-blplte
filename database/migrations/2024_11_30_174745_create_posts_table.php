@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title', length: 255);
-            $table->string('slug', length: 300)->unique();
+            $table->string('title', length: 512);
+            $table->string('slug', length: 512)->unique();
+            $table->string('thumbnail_url', 512)->nullable();
+            $table->string('meta_title', length: 255)->nullable();
+            $table->string('meta_description', length: 255)->nullable();
             $table->text('body');
             $table->boolean('is_published')->default(false);
+            $table->datetime('published_at')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

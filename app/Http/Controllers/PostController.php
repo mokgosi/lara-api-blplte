@@ -60,7 +60,6 @@ class PostController extends Controller
         $post = $this->postRepositoryInterface->show($post->id);
 
         return ApiResponseClass::sendResponse(new PostResource($post),'',200);
-
     }
 
     /**
@@ -75,11 +74,10 @@ class PostController extends Controller
         DB::beginTransaction();
 
         try{
-             $post = $this->postRepositoryInterface->update($validated , $post->id);
+             $post = $this->postRepositoryInterface->update($validated, $post->id);
 
              DB::commit();
              return ApiResponseClass::sendResponse('Post Updated Successfully','',201);
-
         } catch(\Exception $e) {
             return ApiResponseClass::rollback($e);
         }
