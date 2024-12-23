@@ -11,7 +11,7 @@ class UpdateLikeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdateLikeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'is_liked' => 'required',
+            'post_id' => 'required|integer',
+            'user_id' => 'required|integer'
         ];
     }
 }

@@ -16,6 +16,9 @@ return new class extends Migration
             $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
+
+            // $table->unique(['category_id', 'post_id']);
+
         });
     }
 

@@ -98,4 +98,5 @@ class PostController extends Controller
         $data = $this->postRepositoryInterface->getPostWithComments($id);
         return ApiResponseClass::sendResponse(PostResource::collection($data),'',200);
     }
+
 }
