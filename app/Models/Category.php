@@ -16,7 +16,9 @@ class Category extends Model
 
     public function posts(): BelongsToMany
     {
-        return $this->belongsToMany(Post::class);
+        return $this->belongsToMany(Post::class)
+            ->using(CategoryPost::class)
+            ->withPivot(['title']);
     }
 
     public function publishedPosts(): BelongsToMany

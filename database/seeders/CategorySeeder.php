@@ -16,15 +16,9 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             'Software and App Development',
-            'Gadgets and Consumer Electronics',
             'Artificial Intelligence and Machine Learning',
             'Cybersecurity and Privacy',
-            'Tech Industry News and Trends',
             'Internet and Networking',
-            'Artificial Reality and Virtual Reality',
-            'Tech Reviews and Comparisons',
-            'Emerging Technologies',
-            'Tech Tips and Tutorials'
         ];
 
         foreach ($categories as $category) {

@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('category_post', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');
-            $table->timestamps();
+            // $table->timestamps();
 
-            // $table->unique(['category_id', 'post_id']);
+            $table->unique(['category_id', 'post_id']);
 
         });
     }
